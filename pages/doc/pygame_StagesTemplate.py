@@ -13,8 +13,7 @@ def textDraw(msgText, XYPosition, color):
 def pythag(pX, pY, tX, tY):
     a = pX - tX
     b = pY - tY
-    c = math.sqrt(a ** 2 + b ** 2)
-    return c
+    return math.sqrt(a ** 2 + b ** 2)
 
 # game setup ################ only runs once
 
@@ -54,7 +53,12 @@ while gameState != "exit":  # game loop - note: everything in the mainloop is in
         screen.fill(black)
         # ADD CODE HERE
 
-        textDraw("Time: " + str(pygame.time.get_ticks() - startTime), (SCREENWIDTH / 2 - 100, 70), green)
+        textDraw(
+            f"Time: {str(pygame.time.get_ticks() - startTime)}",
+            (SCREENWIDTH / 2 - 100, 70),
+            green,
+        )
+
         if pygame.time.get_ticks() - startTime > 10000:  # change state after 10 seconds
             gameState = "gameOver"
 
